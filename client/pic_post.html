@@ -1,0 +1,49 @@
+<template name="pic_post" xmlns="http://www.w3.org/1999/html">
+
+    <div id="pic_post" class="container">
+        <section class="jumbotron text-center" style="background-color: white;">
+            <div class="container">
+                <h1><p>매 물</p></h1>
+                <h2>
+                    <p>
+                        <small>다양한 매물을 둘러보세요.</small>
+                    </p>
+                </h2>
+                <p>
+                    <a href="/pic_posting/newPosting" class="btn btn-primary">새로운 매물 등록하기</a>
+                </p>
+            </div>
+        </section>
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">카테고리</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">미리보기</th>
+                    <th scope="col">작성자</th>
+                    <th scope="col">작성일</th>
+                    <th scope="col">조회수</th>
+                    <th scope="col">삭제</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each boards}}
+                    <tr>
+                        <td>{{Kategorie}}</td>
+                        <td><a href="/diary_post/{{_id}}">{{title}}</a></td>
+                        <td><div class="mt-2">{{{content}}}</div></td>
+                        <td>{{name}}</td>
+                        <td>{{YMD}}<br><span class="d-none d-lg-block">{{HMS}}</span></td>
+                        <td> {{readCount}}</td>
+                        <td><button id="btn-remove" class="close" style="float: left;">
+                            <span aria-hidden="true">X</span>
+                        </button></td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</template>

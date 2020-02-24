@@ -1,0 +1,48 @@
+<template name="pic_posting">
+
+    <div id="pic_posting">
+        <section class="jumbotron" style="background-color: white;">
+            <div class="container">
+                <h1 class="text-center">매물 등록</h1>
+                <p>
+                <small><div class="lead text-muted text-center">매물의 상태를 알 수 있는 <br> 깨끗한 화질의 사진 한 장과, <br> 경매 시작 금액을 정해주세요.</div></small>
+                </p>
+                {{#with post}}
+                    <div class="row text-center">
+
+
+                        <div class="col-md-4 mb-3">
+                            <label for="Kategorie">카테고리</label>
+                            <select class="custom-select d-block w-100" id="Kategorie" required>
+                                <option value="">Choose...</option>
+                                <option>fashion</option>
+                                <option>beauty</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid Kategorie.
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="input-group mb-3 col-md-3">
+                            <input class="form-control" value="{{name}}" type="text" id="inp-name" placeholder="작성자"/>
+                        </div>
+                        <div class="input-group mb-3 col-md-9">
+                            <input class="form-control" value="{{title}}" type="text" id="inp-title" placeholder="경매 시작 가격"/>
+                        </div>
+                    </div>
+                    <div id="editor">{{{content}}}</div>
+                {{/with}}
+                <p>
+                    <a id="btn-save" href="#" class="btn btn-primary">일기 저장</a>
+                    <a id="btn-quit" href="../pic_post" class="btn btn-secondary">일기 쓰기 취소</a>
+                </p>
+            </div>
+        </section>
+    </div>
+</template>
